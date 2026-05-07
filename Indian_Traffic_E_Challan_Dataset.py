@@ -70,7 +70,7 @@ print('----------------------------------------------------')
 # 5. TIME SERIES ANALYSIS - TOTAL CHALLAN
 # =========================================================
 
-monthly=df['Total_Challan'].resample('M').sum()
+monthly=df['Total_Challan'].resample('ME').sum()
 print(monthly)
 print('----------------------------------------------------')
 monthy_highest_Challan_value=monthly.max()
@@ -86,7 +86,7 @@ if(end>start):
 else:
     print('Trend is decresing....')
 print('----------------------------------------------------')
-yearly=df['Total_Challan'].resample('Y').sum()
+yearly=df['Total_Challan'].resample('YE').sum()
 print(yearly)
 print('----------------------------------------------------')
 print(yearly.idxmax(),yearly.max())
@@ -139,10 +139,10 @@ print('----------------------------------------------------')
 # 7. PENDING vs DISPOSED ANALYSIS
 # =========================================================
 
-Pending_Challan_monthly=df['Pending_Challan'].resample('M').sum()
+Pending_Challan_monthly=df['Pending_Challan'].resample('ME').sum()
 print(Pending_Challan_monthly)
 print('----------------------------------------------------')
-Disposed_Challan_monthly=df['Disposed_Challan'].resample('M').sum()
+Disposed_Challan_monthly=df['Disposed_Challan'].resample('ME').sum()
 print(Disposed_Challan_monthly)
 print('----------------------------------------------------')
 comparison=pd.DataFrame({
@@ -193,7 +193,7 @@ print('----------------------------------------------------')
 # =========================================================
 
 
-revenue_monthly=df['Total_Amount'].resample('M').sum()
+revenue_monthly=df['Total_Amount'].resample('ME').sum()
 print(revenue_monthly)
 print('----------------------------------------------------')
 print(revenue_monthly.idxmax(),revenue_monthly.max())
@@ -207,8 +207,8 @@ else:
     print('Revenue is decresing...')
 print('----------------------------------------------------')
 
-monthly_Challan=df['Total_Challan'].resample('M').sum()
-revenue_monthly=df['Total_Amount'].resample('M').sum()
+monthly_Challan=df['Total_Challan'].resample('ME').sum()
+revenue_monthly=df['Total_Amount'].resample('ME').sum()
 
 compare_ev=pd.DataFrame({
     'Challan':monthly_Challan,
@@ -226,7 +226,7 @@ print('----------------------------------------------------')
 df['Efficiency']=df['Disposed_Challan']/df['Total_Challan']
 print(df['Efficiency'])
 print('----------------------------------------------------')
-monthly_Efficiency=df['Efficiency'].resample('M').mean()
+monthly_Efficiency=df['Efficiency'].resample('ME').mean()
 print(monthly_Efficiency)
 print('----------------------------------------------------')
 
@@ -247,10 +247,10 @@ print('----------------------------------------------------')
 # 10. COURT CASE ANALYSIS
 # =========================================================
 
-Pending_Court_monthly=df['Pending_Court'].resample('M').sum()
+Pending_Court_monthly=df['Pending_Court'].resample('ME').sum()
 print(Pending_Court_monthly)
 print('----------------------------------------------------')
-Disposed_Court_monthly=df['Disposed_Court'].resample('M').sum()
+Disposed_Court_monthly=df['Disposed_Court'].resample('ME').sum()
 print(Disposed_Court_monthly)
 print('----------------------------------------------------')
 
@@ -454,8 +454,8 @@ def dashboard():
     disposed = df['Disposed_Court'].sum()
 
     # ---------------- Time Series ----------------
-    monthly = df['Total_Challan'].resample('M').sum()
-    revenue = df['Total_Amount'].resample('M').sum()
+    monthly = df['Total_Challan'].resample('ME').sum()
+    revenue = df['Total_Amount'].resample('ME').sum()
 
     # ---------------- Insights ----------------
     highest_month = monthly.idxmax().strftime("%Y-%m")

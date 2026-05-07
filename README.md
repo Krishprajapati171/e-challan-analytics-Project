@@ -21,8 +21,21 @@ This system processes E-Challan datasets and generates interactive dashboards wi
 - 📉 Growth Rate Analysis (Monthly & Yearly)
 - 📊 Interactive Web Dashboard using Flask
 - 🎨 Beautiful UI with Bootstrap 5
+- 🌐 Interactive Flask dashboard
 
 ---
+
+⚙️ Installation & Setup
+1. Clone Repository
+git clone https://github.com/your-username/echallan-analytics-dashboard.git  
+cd echallan-analytics-dashboard
+2. Install Dependencies
+pip install -r requirements.txt
+3. Run Flask App
+python app.py
+4. Open in Browser
+http://127.0.0.1:5000/
+
 
 ## 🛠️ Tech Stack
 
